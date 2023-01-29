@@ -9,6 +9,14 @@ const CandidatosMain = () => {
   const [query, setQuery] = useState('');
   const searchableColumns = ['nombre', 'ubicación', 'estado'];
 
+  // const dispatch = useDispatch();
+  // const candidatosList = useSelector((state) => state.candidatos);
+  // const [candidatosData, setCandidatosData] = useState(candidatosList);
+  // const pages = useSelector((state) => state.candidatos.pagination);
+  // const [query, setQuery] = useState('');
+  // // Setting a searchable column list
+  // const searchableColumns = ['nombreCompleto', 'estado', 'ciudad'];
+
   // Search method
   const search = (data) => {
     return data.filter((row) => searchableColumns.some(
@@ -18,17 +26,17 @@ const CandidatosMain = () => {
         .indexOf(query.toLowerCase()) > -1,
     ));
   };
+
   // UseEffect to dispatch search filter
   useEffect(() => {
     setTimeout(setState(search(alumnosList)));
   }, [query]);
-  console.log(state);
 
   return (
     <div className="candidatos-main">
       <TableNavbar
         title="Candidatos"
-        searchPlaceholder="Buscar por Nombre, Ubicación o palabra clave..."
+        searchPlaceholder="Buscar por Nombre, Ubicación o estado."
         query={query}
         setQuery={setQuery}
         buttonLabel="Añadir candidato"

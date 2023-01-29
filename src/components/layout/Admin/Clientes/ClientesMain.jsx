@@ -10,6 +10,7 @@ const ClientesMain = () => {
     <div className="candidatos-main">
       <TableNavbar
         title="Clientes"
+        searchPlaceholder="Buscar por Nombre, Ubicación o email."
         query={query}
         setQuery={setQuery}
         buttonLabel="Añadir cliente"

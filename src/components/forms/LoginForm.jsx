@@ -14,17 +14,6 @@ const LoginForm = () => {
     password: '',
   };
 
-  /** Yup schema config */
-  /*  const registerSchema = Yup.object().shape(
-    {
-      email: Yup.string()
-        .email('*Formato de email inválido')
-        .required('*Campo obligatorio'),
-      password: Yup.string()
-        .min(8, '*Contraseña muy corta')
-        .required('*Campo obligatorio'),
-    },
-  ); */
   const navigate = useNavigate();
 
   // Submit handle trigger for user login
@@ -36,9 +25,6 @@ const LoginForm = () => {
   return (
     <Formik
       initialValues={initialValues}
-      // *** Yup Validation Schema ***
-      /* validationSchema={registerSchema} */
-      // ** onSubmit Event
       onSubmit={async (values) => {
         authUser(values);
       }}
@@ -87,11 +73,11 @@ const LoginForm = () => {
               />
               {/* Password Errors */}
               {
-              errors.password && touched.password
-              && (
-                <ErrorMessage name="password" component="div" className="form-error cm-text-700" />
-              )
-            }
+                errors.password && touched.password
+                && (
+                  <ErrorMessage name="password" component="div" className="form-error cm-text-700" />
+                )
+              }
             </div>
           </div>
           <div className="mb-3 row">
