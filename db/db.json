@@ -1,50 +1,178 @@
 {
-    "user": [
-      {
-        "id": "admin",
-        "name": "NT Infotech",
-        "password": "Test$1234",
-        "email": "test@gmail.com",
-        "gender": "male",
-        "role": "admin",
-        "isactive": true
-      },
-      {
-        "id": "testuser",
-        "name": "Test User",
-        "password": "Test@1234",
-        "email": "test@in.com",
-        "gender": "male",
-        "role": "user",
-        "isactive": true
-      },
-      {
-        "id": "Jhon1",
-        "name": "NT Infotech",
-        "password": "Test@1233",
-        "email": "te@in.com",
-        "gender": "male",
-        "role": "tech",
-        "isactive": true
-      },
-      {
-        "id": "ntuser",
-        "name": "ramesh",
-        "password": "Test@1234",
-        "email": "te@in.com",
-        "gender": "male",
-        "role": "tech",
-        "isactive": true
-      }
-    ],
-    "role": [
-      {
-        "code": "user",
-        "name": "User"
-      },
-      {
-        "code": "tech",
-        "name": "Technician"
-      }
-    ]
-  }
+  "user": [
+    {
+      "id": "admin",
+      "name": "NT Infotech",
+      "password": "Test$1234",
+      "email": "test@gmail.com",
+      "gender": "male",
+      "role": "admin",
+      "isactive": true
+    },
+    {
+      "id": "testuser",
+      "name": "Test User",
+      "password": "Test@1234",
+      "email": "test@in.com",
+      "gender": "male",
+      "role": "user",
+      "isactive": true
+    },
+    {
+      "id": "Jhon1",
+      "name": "NT Infotech",
+      "password": "Test@1233",
+      "email": "te@in.com",
+      "gender": "male",
+      "role": "tech",
+      "isactive": true
+    },
+    {
+      "id": "ntuser",
+      "name": "ramesh",
+      "password": "Test@1234",
+      "email": "te@in.com",
+      "gender": "male",
+      "role": "tech",
+      "isactive": true
+    }
+  ],
+  "role": [
+    {
+      "code": "user",
+      "name": "User"
+    },
+    {
+      "code": "tech",
+      "name": "Technician"
+    }
+  ],
+  "candidatos": [
+    {
+      "id": 1,
+      "nombre": "Álvaro Sánchez Monteagudo",
+      "ubicacion": "Valencia, España",
+      "telefono": "+34 657 85 25 46",
+      "email": "smonteagudo@gmail.com",
+      "tecnologias": [
+        "HTML&CSS",
+        "ANGULAR",
+        "JAVA",
+        "PHP"
+      ],
+      "estado": "contratado"
+    },
+    {
+      "id": 2,
+      "nombre": "Amparo Herrera Climent",
+      "ubicacion": "Sevilla, España",
+      "telefono": "+34 654 55 98 56",
+      "email": "aherreracliment@gmail.com",
+      "tecnologias": [
+        "HTML&CSS",
+        "REACT",
+        "JAVA",
+        "PHP"
+      ],
+      "estado": "en_proceso"
+    },
+    {
+      "id": 3,
+      "nombre": "Manuel Jimenéz Santos",
+      "ubicacion": "Berlín, Alemania",
+      "telefono": "+34 634 45 22 56",
+      "email": "manujimenez@gmail.com",
+      "tecnologias": [
+        "JAVA",
+        "PHP"
+      ],
+      "estado": "libre"
+    },
+    {
+      "id": 4,
+      "nombre": "Cristina Bea Martos",
+      "ubicacion": "Málaga, España",
+      "telefono": "+34 684 99 56 70",
+      "email": "cristibea_martos@gmail.com",
+      "tecnologias": [
+        "REACT",
+        "HTML&CSS"
+      ],
+      "estado": "contratado"
+    },
+    {
+      "id": 5,
+      "nombre": "Jordi Rubio Roses",
+      "ubicacion": "Frankfurt, Alemania",
+      "telefono": "+34 600 57 32 11",
+      "email": "rosesrubio@gmail.com",
+      "tecnologias": [
+        "C#",
+        "JAVA"
+      ],
+      "estado": "contratado"
+    },
+    {
+      "id": 6,
+      "nombre": "Markus Estein Vomel",
+      "ubicacion": "Berlín, Alemania",
+      "telefono": "+34 604 90 50 00",
+      "email": "markstein@gmail.com",
+      "tecnologias": [
+        "C#",
+        "JAVA",
+        "REACT",
+        "HTML&CSS"
+      ],
+      "estado": "libre"
+    },
+    {
+      "id": 7,
+      "nombre": "Shein McCain Black",
+      "ubicacion": "Londres, UK",
+      "telefono": "+34 611 92 11 60",
+      "email": "shein_mckein@gmail.com",
+      "tecnologias": [
+        "HTML&CSS",
+        "PHP"
+      ],
+      "estado": "libre"
+    },
+    {
+      "id": 8,
+      "nombre": "Kate Lovely Ress",
+      "ubicacion": "Manchester, UK",
+      "telefono": "+34 684 22 56 30",
+      "email": "resslovely@gmail.com",
+      "tecnologias": [
+        "HTML&CSS",
+        "REACT"
+      ],
+      "estado": "descartado"
+    },
+    {
+      "id": 9,
+      "nombre": "Enrique Sánchez Rius",
+      "ubicacion": "Málaga, España",
+      "telefono": "+34 611 39 33 71",
+      "email": "esanchezrius@gmail.com",
+      "tecnologias": [
+        "HTML&CSS",
+        "ANGULAR"
+      ],
+      "estado": "en_proceso"
+    },
+    {
+      "id": 10,
+      "nombre": "Marcos Ruiz Rius",
+      "ubicacion": "Las Palmas, España",
+      "telefono": "+34 689 65 06 0d0",
+      "email": "mruiz_90@gmail.com",
+      "tecnologias": [
+        "HTML&CSS",
+        "SYPHONY "
+      ],
+      "estado": "libre"
+    }
+  ]
+}

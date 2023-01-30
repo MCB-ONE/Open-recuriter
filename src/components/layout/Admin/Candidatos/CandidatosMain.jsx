@@ -1,25 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllCandidatos, resetDetail } from '../../../../store/slices/candidatos';
+// import Pagination from '../../../pagination/Pagination';
 import SortableDataTable from '../../../sortableDataTable/SortableDataTable';
 import TableNavbar from '../TableNavbar';
 
 const CandidatosMain = () => {
-  const alumnosList = useSelector((state) => state.alumnos.list);
-  const [state, setState] = useState(alumnosList);
-  const [query, setQuery] = useState('');
-  const searchableColumns = ['nombre', 'ubicación', 'estado'];
-
-  // const dispatch = useDispatch();
-  // const candidatosList = useSelector((state) => state.candidatos);
-  // const [candidatosData, setCandidatosData] = useState(candidatosList);
+  const dispatch = useDispatch();
+  const candidatosList = useSelector((state) => state.candidatos.list);
+  const [candidatosData, setCandidatosData] = useState(candidatosList);
   // const pages = useSelector((state) => state.candidatos.pagination);
-  // const [query, setQuery] = useState('');
-  // // Setting a searchable column list
-  // const searchableColumns = ['nombreCompleto', 'estado', 'ciudad'];
+  const [query, setQuery] = useState('');
+  // Setting a searchable column list
+  const searchableColumns = ['nombre', 'estado', 'ubicacion'];
 
   // Search method
-  const search = (data) => {
-    return data.filter((row) => searchableColumns.some(
+  const search = (rows) => {
+    return rows.filter((row) => searchableColumns.some(
       (column) => row[column]
         .toString()
         .toLowerCase()
@@ -27,30 +24,62 @@ const CandidatosMain = () => {
     ));
   };
 
-  // UseEffect to dispatch search filter
+  // Pagination handler
+  // const changePage = (page) => {
+  //   const queryConfig = {
+  //     page,
+  //   };
+  //   dispatch(getAllCandidatos(queryConfig));
+  // };
+
   useEffect(() => {
-    setTimeout(setState(search(alumnosList)));
-  }, [query]);
+    dispatch(getAllCandidatos());
+    dispatch(resetDetail());
+  }, []);
+
+  useEffect(() => {
+    setCandidatosData(candidatosList);
+  }, [candidatosList]);
 
   return (
     <div className="candidatos-main">
-      <TableNavbar
-        title="Candidatos"
-        searchPlaceholder="Buscar por Nombre, Ubicación o estado."
-        query={query}
-        setQuery={setQuery}
-        buttonLabel="Añadir candidato"
-      />
-      <SortableDataTable
-        data={state}
-        columns={[
-          { label: 'nombre', sortable: true, link: { to: 'id' } },
-          { label: 'ubicación', sortable: true },
-          { label: 'teléfono', sortable: false, isNum: true },
-          { label: 'tecnologías', sortable: true, isTag: true },
-          { label: 'estado', sortable: true, isState: true },
-        ]}
-      />
+      {candidatosData
+        ? (
+          <>
+            <TableNavbar
+              title="Candidatos"
+              searchPlaceholder="Buscar por Nombre, ciudad o palabra clave..."
+              query={query}
+              setQuery={setQuery}
+              buttonLabel="Añadir candidato"
+            />
+            <SortableDataTable
+              data={search(candidatosData)}
+              columns={[
+                {
+                  label: 'nombre', row: 'nombre', sortable: true, isLink: true, isNum: false, isState: false, isTag: false, isDouble: false,
+                },
+                {
+                  label: 'ubicación', row: 'ubicacion', sortable: true, isNum: false, isState: false, isTag: false, isDouble: false,
+                },
+                {
+                  label: 'teléfono', row: 'telefono', sortable: false, isNum: true, isState: false, isTag: false, isDouble: false,
+                },
+                {
+                  label: 'tecnologías', row: 'tecnologias', sortable: true, isState: false, isNum: false, isTag: true, isDouble: false,
+                },
+                {
+                  label: 'estado', row: 'estado', sortable: true, isState: true, isNum: false, isTag: false, isDouble: false,
+                },
+              ]}
+            />
+            {/* <Pagination pages={pages} changePage={changePage} /> */}
+          </>
+        ) : (
+          <div className="data-error">
+            <h2>No hay candidatos.</h2>
+          </div>
+        ) }
     </div>
   );
 };
