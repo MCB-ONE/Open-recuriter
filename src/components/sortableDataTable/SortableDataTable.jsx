@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-/** Styles import */
-import './dataTable.scss';
+import { v4 } from 'uuid';
 import { Link } from 'react-router-dom';
 import TableHeader from './TableHeader';
 import TagsList from '../tags/TagsList';
 import useSortableData from '../../hooks/useSortableData';
+/** Styles import */
+import './dataTable.scss';
 
 const SortableDataTable = ({ data, columns }) => {
   // Use custom hook
@@ -33,13 +34,13 @@ const SortableDataTable = ({ data, columns }) => {
         elements.push(element);
       });
       return (
-        <td key={item[column.row]} className="tags">
+        <td key={v4()} className="tags">
           <TagsList data={elements} />
         </td>
       );
     } if (isState) {
       return (
-        <td className="estado" key={item[column.row]}>
+        <td className="estado" key={v4()}>
           <span className={renderSwitchClass(item[column.row])}>
             {item[column.row]}
           </span>
@@ -48,7 +49,7 @@ const SortableDataTable = ({ data, columns }) => {
     }
     if (isLink) {
       return (
-        <td key={item[column.row]}>
+        <td key={v4()}>
           <Link to={`${item.id}`}>
             {item[column.row]}
           </Link>
@@ -66,12 +67,12 @@ const SortableDataTable = ({ data, columns }) => {
         // Extract the values of each field
         fieldsValues.push(item[el]);
       });
-      return <td>{`${fieldsValues[0]}, ${fieldsValues[1]}`}</td>;
+      return <td key={v4()}>{`${fieldsValues[0]}, ${fieldsValues[1]}`}</td>;
     }
     if (isNum) {
-      return <td key={item[column.label]} className="num">{item[column.row]}</td>;
+      return <td key={v4()} className="num">{item[column.row]}</td>;
     }
-    return <td>{item[column.row]}</td>;
+    return <td key={v4()}>{item[column.row]}</td>;
   };
 
   return (
