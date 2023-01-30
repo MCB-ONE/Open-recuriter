@@ -7,8 +7,9 @@ const useSortableData = (items, config = null) => {
   const sortedItems = useMemo(() => {
     const sortableItems = [...items];
     if (sortConfig !== null) {
-      const sortKey = sortConfig.key.label;
+      const sortKey = sortConfig.key.row;
       const { direction } = sortConfig;
+      console.log(sortKey, sortConfig);
       if (sortConfig.key.isTag) {
         sortableItems.sort((a, b) => {
           if (direction === 'ascending') {
