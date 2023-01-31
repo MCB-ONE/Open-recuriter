@@ -86,7 +86,7 @@
       "telefono": "+34 634 45 22 56",
       "email": "manujimenez@gmail.com",
       "tecnologias": [
-        "JAVA",
+        "JAVASCRIPT",
         "PHP"
       ],
       "estado": "libre"
@@ -187,43 +187,43 @@
   ],
   "tecnologia": [
     {
-      "value": "react",
-      "label": "React",
+      "value": "REACT",
+      "label": "REACT",
       "id": 1
     },
     {
-      "value": "html&css",
-      "label": "Htmal&Css",
+      "value": "HTML&CSS",
+      "label": "HTML&CSS",
       "id": 2
     },
     {
-      "value": "angular",
-      "label": "Angular",
+      "value": "ANGULAR",
+      "label": "ANGULAR",
       "id": 3
     },
     {
-      "value": "java",
-      "label": "Java",
+      "value": "JAVA",
+      "label": "JAVA",
       "id": 4
     },
     {
-      "value": "javascript",
-      "label": "JavaScript",
+      "value": "JAVASCRIPT",
+      "label": "JAVASCRIPT",
       "id": 5
     },
     {
-      "value": "csharp",
+      "value": "C#",
       "label": "C#",
       "id": 6
     },
     {
-      "value": "php",
-      "label": "Php",
+      "value": "PHP",
+      "label": "PHP",
       "id": 7
     },
     {
-      "value": "flutter",
-      "label": "Flutter",
+      "value": "FLUTTER",
+      "label": "FLUTTER",
       "id": 8
     }
   ],

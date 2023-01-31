@@ -50,6 +50,7 @@ export const cleanTecnologiaDetail = () => {
 const initialState = {
   list: false,
   detail: false,
+  filters: [],
   isLoading: false,
   error: false,
 };
@@ -58,8 +59,14 @@ const tecnologiasSlice = createSlice({
   name: 'tecnologias',
   initialState,
   reducers: {
-    resetDetail: (state) => {
-      state.detail = false;
+    resetFilters: (state) => {
+      state.filters = [];
+    },
+    setFilters: (state, action) => {
+      const { payload } = action;
+      const ids = [];
+      payload.map((tech) => ids.push(tech.label));
+      state.filters = ids;
     },
   },
   extraReducers: {
@@ -89,6 +96,6 @@ const tecnologiasSlice = createSlice({
   },
 });
 // Destructure and export the plain action creators
-export const { resetDetail } = tecnologiasSlice.actions;
+export const { resetFilters, setFilters } = tecnologiasSlice.actions;
 const { reducer } = tecnologiasSlice;
 export default reducer;

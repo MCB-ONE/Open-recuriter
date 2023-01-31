@@ -8,14 +8,31 @@ import TableNavbar from '../TableNavbar';
 const CandidatosMain = () => {
   const dispatch = useDispatch();
   const candidatosList = useSelector((state) => state.candidatos.list);
+  const tagFilterList = useSelector((state) => state.tecnologias.filters);
   const [candidatosData, setCandidatosData] = useState(candidatosList);
   // const pages = useSelector((state) => state.candidatos.pagination);
   const [query, setQuery] = useState('');
   // Setting a searchable column list
-  const searchableColumns = ['nombre', 'estado', 'ubicacion'];
+  const searchableColumns = ['nombre', 'estado', 'ciudad'];
 
   // Search method
   const search = (rows) => {
+    if (tagFilterList.length > 0) {
+      console.log(tagFilterList);
+      const filteredRows = rows.filter(
+        (row) => row.tecnologias.some(
+          (tech) => tagFilterList.includes(tech),
+        ),
+      );
+
+      return filteredRows.filter((row) => searchableColumns.some(
+        (column) => row[column]
+          .toString()
+          .toLowerCase()
+          .indexOf(query.toLowerCase()) > -1,
+      ));
+    }
+
     return rows.filter((row) => searchableColumns.some(
       (column) => row[column]
         .toString()
@@ -39,7 +56,7 @@ const CandidatosMain = () => {
 
   useEffect(() => {
     setCandidatosData(candidatosList);
-  }, [candidatosList]);
+  }, [candidatosList, tagFilterList]);
 
   return (
     <div className="candidatos-main">
@@ -79,7 +96,7 @@ const CandidatosMain = () => {
           <div className="data-error">
             <h2>No hay candidatos.</h2>
           </div>
-        ) }
+        )}
     </div>
   );
 };

@@ -63,6 +63,9 @@ const candidatoSlice = createSlice({
     resetDetail: (state) => {
       state.detail = false;
     },
+    filterList: (state) => {
+      state.list = false;
+    },
   },
   extraReducers: {
     [getAllCandidatos.pending]: (state) => {

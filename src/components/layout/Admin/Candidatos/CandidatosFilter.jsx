@@ -13,7 +13,6 @@ const CandidatosFilter = () => {
   let techOptions = false;
   if (tecnologiasState.list) {
     techOptions = tecnologiasState.list;
-    console.log(techOptions);
   }
   // const [selectedTecnologias, setSelectedTecnologias] = useState(false);
   const [filters, setFilters] = useState({});
