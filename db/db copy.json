@@ -56,10 +56,26 @@
       "telefono": "+34 657 85 25 46",
       "email": "smonteagudo@gmail.com",
       "tecnologias": [
-        "HTML&CSS",
-        "ANGULAR",
-        "JAVA",
-        "PHP"
+        {
+          "value": "react",
+          "label": "React",
+          "id": 1
+        },
+        {
+          "value": "html&css",
+          "label": "Htmal&Css",
+          "id": 2
+        },
+        {
+          "value": "angular",
+          "label": "Angular",
+          "id": 3
+        },
+        {
+          "value": "java",
+          "label": "Java",
+          "id": 4
+        }
       ],
       "estado": "contratado"
     },
@@ -71,10 +87,21 @@
       "telefono": "+34 654 55 98 56",
       "email": "aherreracliment@gmail.com",
       "tecnologias": [
-        "HTML&CSS",
-        "REACT",
-        "JAVA",
-        "PHP"
+        {
+          "value": "react",
+          "label": "React",
+          "id": 1
+        },
+        {
+          "value": "html&css",
+          "label": "Htmal&Css",
+          "id": 2
+        },
+        {
+          "value": "csharp",
+          "label": "C#",
+          "id": 6
+        }
       ],
       "estado": "en_proceso"
     },
@@ -86,8 +113,16 @@
       "telefono": "+34 634 45 22 56",
       "email": "manujimenez@gmail.com",
       "tecnologias": [
-        "JAVA",
-        "PHP"
+        {
+          "value": "java",
+          "label": "Java",
+          "id": 4
+        },
+        {
+          "value": "php",
+          "label": "Php",
+          "id": 7
+        }
       ],
       "estado": "libre"
     },
@@ -99,8 +134,16 @@
       "telefono": "+34 684 99 56 70",
       "email": "cristibea_martos@gmail.com",
       "tecnologias": [
-        "REACT",
-        "HTML&CSS"
+        {
+          "value": "html&css",
+          "label": "Htmal&Css",
+          "id": 2
+        },
+        {
+          "value": "angular",
+          "label": "Angular",
+          "id": 3
+        }
       ],
       "estado": "contratado"
     },
@@ -112,8 +155,16 @@
       "telefono": "+34 600 57 32 11",
       "email": "rosesrubio@gmail.com",
       "tecnologias": [
-        "C#",
-        "JAVA"
+        {
+          "value": "csharp",
+          "label": "C#",
+          "id": 6
+        },
+        {
+          "value": "php",
+          "label": "Php",
+          "id": 7
+        }
       ],
       "estado": "contratado"
     },
@@ -125,10 +176,26 @@
       "telefono": "+34 604 90 50 00",
       "email": "markstein@gmail.com",
       "tecnologias": [
-        "C#",
-        "JAVA",
-        "REACT",
-        "HTML&CSS"
+        {
+          "value": "html&css",
+          "label": "Htmal&Css",
+          "id": 2
+        },
+        {
+          "value": "javascript",
+          "label": "JavaScript",
+          "id": 5
+        },
+        {
+          "value": "csharp",
+          "label": "C#",
+          "id": 6
+        },
+        {
+          "value": "php",
+          "label": "Php",
+          "id": 7
+        }
       ],
       "estado": "libre"
     },
@@ -140,8 +207,16 @@
       "telefono": "+34 611 92 11 60",
       "email": "shein_mckein@gmail.com",
       "tecnologias": [
-        "HTML&CSS",
-        "PHP"
+        {
+          "value": "react",
+          "label": "React",
+          "id": 1
+        },
+        {
+          "value": "html&css",
+          "label": "Htmal&Css",
+          "id": 2
+        }
       ],
       "estado": "libre"
     },
@@ -153,8 +228,16 @@
       "telefono": "+34 684 22 56 30",
       "email": "resslovely@gmail.com",
       "tecnologias": [
-        "HTML&CSS",
-        "REACT"
+        {
+          "value": "react",
+          "label": "React",
+          "id": 1
+        },
+        {
+          "value": "html&css",
+          "label": "Htmal&Css",
+          "id": 2
+        }
       ],
       "estado": "descartado"
     },
@@ -166,8 +249,21 @@
       "telefono": "+34 611 39 33 71",
       "email": "esanchezrius@gmail.com",
       "tecnologias": [
-        "HTML&CSS",
-        "REACT"
+        {
+          "value": "react",
+          "label": "React",
+          "id": 1
+        },
+        {
+          "value": "angular",
+          "label": "Angular",
+          "id": 3
+        },
+        {
+          "value": "java",
+          "label": "Java",
+          "id": 4
+        }
       ],
       "estado": "en_proceso"
     },
@@ -179,8 +275,21 @@
       "telefono": "+34 689 65 06 0d0",
       "email": "mruiz_90@gmail.com",
       "tecnologias": [
-        "HTML&CSS",
-        "SYPHONY "
+        {
+          "value": "csharp",
+          "label": "C#",
+          "id": 6
+        },
+        {
+          "value": "php",
+          "label": "Php",
+          "id": 7
+        },
+        {
+          "value": "flutter",
+          "label": "Flutter",
+          "id": 8
+        }
       ],
       "estado": "libre"
     }
@@ -230,6 +339,11 @@
   "candidatoWithTecnologias": [
     {
       "id": 1,
+      "candidatoId": 1,
+      "tecnologiaId": 4
+    },
+    {
+      "id": 11,
       "candidatoId": 1,
       "tecnologiaId": 4
     },

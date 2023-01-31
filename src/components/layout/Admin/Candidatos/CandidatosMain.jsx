@@ -60,7 +60,7 @@ const CandidatosMain = () => {
                   label: 'nombre', row: 'nombre', sortable: true, isLink: true, isNum: false, isState: false, isTag: false, isDouble: false,
                 },
                 {
-                  label: 'ubicación', row: 'ubicacion', sortable: true, isNum: false, isState: false, isTag: false, isDouble: false,
+                  label: 'ubicación', row: ['ciudad', 'pais'], sortable: true, isNum: false, isState: false, isTag: false, isDouble: true,
                 },
                 {
                   label: 'teléfono', row: 'telefono', sortable: false, isNum: true, isState: false, isTag: false, isDouble: false,

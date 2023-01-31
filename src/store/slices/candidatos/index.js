@@ -8,6 +8,7 @@ export const getAllCandidatos = createAsyncThunk(
   'candidatos/fetchAll',
   async (queryConfig = { query: '', page: 1 }, thunkAPI) => {
     try {
+      console.log(queryConfig);
       const res = await CandidatosService.getAllCandidatos(queryConfig);
       return { candidatos: res.data };
     } catch (error) {
