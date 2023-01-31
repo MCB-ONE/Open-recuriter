@@ -3,6 +3,8 @@ import axiosConfig from '../../utils/axios.config';
 
 // Call auth header auxiliar function to generate the request`s headers to include the bearer token
 const getAllCandidatos = ({ query = '', page = 1 }) => {
+  console.log(query);
+
   if (query === '') {
     return axiosConfig.get(`candidato/?page=${page}`);
   }

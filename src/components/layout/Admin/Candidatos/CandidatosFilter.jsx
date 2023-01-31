@@ -6,7 +6,7 @@ import countriesDataSet from '../../../../data/paises';
 import Spinner from '../../../spinner/Spinner';
 import { getAllCandidatos } from '../../../../store/slices/candidatos';
 import TagSelector from '../../../tags/TagSelector';
-import { getAllTecnologias } from '../../../../store/slices/tecnologias';
+import { getAllTecnologias, resetFilters } from '../../../../store/slices/tecnologias';
 
 const CandidatosFilter = () => {
   const tecnologiasState = useSelector((state) => state.tecnologias);
@@ -15,72 +15,41 @@ const CandidatosFilter = () => {
     techOptions = tecnologiasState.list;
   }
   // const [selectedTecnologias, setSelectedTecnologias] = useState(false);
-  const [filters, setFilters] = useState({});
+  const [queryFilters, setQueryFilters] = useState({});
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllTecnologias());
   }, [dispatch]);
 
-  // Method to format taglist to form data
-  const arrayFormat = (array) => {
-    const obj = array.reduce(
-      (acc, cur) => (
-        { ...acc, [cur.value]: {} }
-      ), {},
-    );
-    return obj;
-  };
-
   const filterHandler = (e) => {
-    if (Array.isArray(e)) {
-      console.log(e);
-      const tech = arrayFormat(e);
-      const techKeys = Object.keys(tech);
-      let tecString = '';
-      // Format to string
-      techKeys.forEach((tec) => {
-        tecString += `${tec}: 1,`;
-      });
-
-      // tech filter to format to query string array
-      let tecQs = `${tecString}`;
-      tecQs = tecQs.substring(0, tecQs.length - 1);
-      tecQs = `[${tecQs}]`;
-      if (tecQs === '[]') {
-        tecQs = '';
-        const { tecnologias, ...newFilters } = filters;
-        setFilters(
-          newFilters,
-        );
-      }
-      if (tecQs !== '') {
-        setFilters({
-          ...filters,
-          tecnologias: tecQs,
-        });
-      }
-    } else if (e.target.name && e.target.value !== 'Seleccione un país' && e.target.value !== '') {
-      console.log(e.target.value);
+    if (e.target.name && e.target.value !== 'Seleccione un país' && e.target.value !== '') {
       const { name, value } = e.target;
-      setFilters({
-        ...filters,
+      setQueryFilters({
+        ...queryFilters,
         [name]: value,
+      });
+    } else if (e.target.name && e.target.value === 'Seleccione un país') {
+      console.log(queryFilters);
+      const newQueryList = delete queryFilters.pais;
+      console.log(queryFilters);
+      setQueryFilters({
+        newQueryList,
       });
     }
   };
 
   useEffect(() => {
-    const query = new URLSearchParams(filters).toString();
+    const query = new URLSearchParams(queryFilters).toString();
     const queryConfig = {
       query,
     };
-    console.log(queryConfig);
     dispatch(getAllCandidatos(queryConfig));
-  }, [filters]);
+  }, [queryFilters]);
 
   const clearFilters = () => {
-    setFilters({});
+    setQueryFilters({});
+    dispatch(resetFilters);
     dispatch(getAllCandidatos());
   };
 
@@ -136,7 +105,7 @@ const CandidatosFilter = () => {
                         <input
                           className="form-check-input"
                           type="radio"
-                          checked={filters.estado === es}
+                          checked={queryFilters.estado === es}
                           value={es}
                           name="estado"
                           onChange={filterHandler}

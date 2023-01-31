@@ -5,6 +5,8 @@ import Select from 'react-select';
 import { useDispatch } from 'react-redux';
 import { setFilters } from '../../store/slices/tecnologias';
 
+// Filter by tags is a local filtering using the store
+
 const TagSelector = ({ options }) => {
   const dispatch = useDispatch();
   const [selectedTags, setSelectedTags] = useState(null);

@@ -180,7 +180,7 @@
       "email": "mruiz_90@gmail.com",
       "tecnologias": [
         "HTML&CSS",
-        "SYPHONY "
+        "SYPHONY"
       ],
       "estado": "libre"
     }
@@ -225,6 +225,11 @@
       "value": "FLUTTER",
       "label": "FLUTTER",
       "id": 8
+    },
+    {
+      "value": "SYPHONY",
+      "label": "SYPHONY",
+      "id": 9
     }
   ],
   "candidatoWithTecnologias": [
