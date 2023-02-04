@@ -73,16 +73,19 @@
                     margin-right: 6px;
                     border-radius: 40px;
                     float: right;
+                }  
+                .success{
+                    background-color: $cm-primary;
                 }
-                .contratado{
-                    background-color: #36E4A6;
+                .error{
+                    background-color: $cm-red;
                 }
-                .preseleccionado{
-                    background-color: #3684FA;
+                .free{
+                    background-color: $cm-secondary;
                 }
-                .pendiente{
-                    background-color: #3FCBF8;
-                }
+                .pending{
+                    background-color: $cm-tertiary;
+                }              
             }
         }
     }
@@ -91,7 +94,8 @@
         input, select, option{
             color: $cm-dark;
             &::placeholder{
-                color: $cm-dark;
+                background-color: $cm-gray--100;
+                color: $cm-gray--300;
                 font-weight: 500;
             }
         }
@@ -119,6 +123,12 @@
                 margin-bottom: 0;
                 
             }
+        }
+        .error{
+            color: $cm-red;
+            margin-top: -20px;
+            margin-left: 5px;
+            font-size: 0.9rem;
         }
     }
 

@@ -1,60 +1,15 @@
 {
-  "user": [
-    {
-      "id": "admin",
-      "name": "NT Infotech",
-      "password": "Test$1234",
-      "email": "test@gmail.com",
-      "gender": "male",
-      "role": "admin",
-      "isactive": true
-    },
-    {
-      "id": "testuser",
-      "name": "Test User",
-      "password": "Test@1234",
-      "email": "test@in.com",
-      "gender": "male",
-      "role": "user",
-      "isactive": true
-    },
-    {
-      "id": "Jhon1",
-      "name": "NT Infotech",
-      "password": "Test@1233",
-      "email": "te@in.com",
-      "gender": "male",
-      "role": "tech",
-      "isactive": true
-    },
-    {
-      "id": "ntuser",
-      "name": "ramesh",
-      "password": "Test@1234",
-      "email": "te@in.com",
-      "gender": "male",
-      "role": "tech",
-      "isactive": true
-    }
-  ],
-  "role": [
-    {
-      "code": "user",
-      "name": "User"
-    },
-    {
-      "code": "tech",
-      "name": "Technician"
-    }
-  ],
   "candidato": [
     {
-      "id": 1,
-      "nombre": "Álvaro Sánchez Monteagudo",
-      "pais": "España",
-      "ciudad": "Valencia",
+      "id": "8e2165f8-1811-49cf-ae59-d3ad941be814",
+      "nombre": "Sergio Sánchez Monteagudo",
+      "pais": "Francia",
+      "ciudad": "Lion",
       "telefono": "+34 657 85 25 46",
       "email": "smonteagudo@gmail.com",
+      "presencialidad": false,
+      "traslado": true,
+      "linkedin": "https://www.linkedin.com/",
       "tecnologias": [
         "HTML&CSS",
         "ANGULAR",
@@ -64,12 +19,15 @@
       "estado": "contratado"
     },
     {
-      "id": 2,
+      "id": "aeb708e0-8e6e-4b16-b54d-b9b2e1c6cc2c",
       "nombre": "Amparo Herrera Climent",
       "pais": "España",
       "ciudad": "Sevilla",
       "telefono": "+34 654 55 98 56",
       "email": "aherreracliment@gmail.com",
+      "presencialidad": true,
+      "traslado": false,
+      "linkedin": "https://www.linkedin.com/",
       "tecnologias": [
         "HTML&CSS",
         "REACT",
@@ -79,12 +37,15 @@
       "estado": "en_proceso"
     },
     {
-      "id": 3,
+      "id": "14d89f64-2821-485b-91c5-beffb1f8a550",
       "nombre": "Manuel Jimenéz Santos",
       "pais": "Alemania",
       "ciudad": "Berlín",
       "telefono": "+34 634 45 22 56",
       "email": "manujimenez@gmail.com",
+      "presencialidad": true,
+      "traslado": false,
+      "linkedin": "https://www.linkedin.com/",
       "tecnologias": [
         "JAVASCRIPT",
         "PHP"
@@ -92,12 +53,15 @@
       "estado": "libre"
     },
     {
-      "id": 4,
+      "id": "7cdedb1c-a161-4c33-a27c-11ead16aae13",
       "nombre": "Cristina Bea Martos",
       "pais": "Alemania",
       "ciudad": "Berlín",
       "telefono": "+34 684 99 56 70",
       "email": "cristibea_martos@gmail.com",
+      "presencialidad": false,
+      "traslado": false,
+      "linkedin": "https://www.linkedin.com/",
       "tecnologias": [
         "REACT",
         "HTML&CSS"
@@ -105,12 +69,15 @@
       "estado": "contratado"
     },
     {
-      "id": 5,
+      "id": "e3dd8992-a4a0-4940-94b9-ad028f54c1f7",
       "nombre": "Jordi Rubio Roses",
       "pais": "Alemania",
       "ciudad": "Frankfurt",
       "telefono": "+34 600 57 32 11",
       "email": "rosesrubio@gmail.com",
+      "presencialidad": false,
+      "traslado": false,
+      "linkedin": "https://www.linkedin.com/",
       "tecnologias": [
         "C#",
         "JAVA"
@@ -118,12 +85,15 @@
       "estado": "contratado"
     },
     {
-      "id": 6,
+      "id": "07f7c288-5519-46d5-b10d-e0b407d1e96a",
       "nombre": "Markus Estein Vomel",
       "pais": "Alemania",
       "ciudad": "Berlín",
       "telefono": "+34 604 90 50 00",
       "email": "markstein@gmail.com",
+      "presencialidad": true,
+      "traslado": true,
+      "linkedin": "https://www.linkedin.com/",
       "tecnologias": [
         "C#",
         "JAVA",
@@ -133,12 +103,15 @@
       "estado": "libre"
     },
     {
-      "id": 7,
+      "id": "ab8f7ad8-5f3e-4f3e-8177-8391b1850b16",
       "nombre": "Shein McCain Black",
-      "pais": "Uk",
+      "pais": "Reino Unido",
       "ciudad": "Londres",
       "telefono": "+34 611 92 11 60",
       "email": "shein_mckein@gmail.com",
+      "presencialidad": false,
+      "traslado": true,
+      "linkedin": "https://www.linkedin.com/",
       "tecnologias": [
         "HTML&CSS",
         "PHP"
@@ -146,12 +119,15 @@
       "estado": "libre"
     },
     {
-      "id": 8,
+      "id": "ad53b091-0823-45b9-b7f5-659791f04475",
       "nombre": "Kate Lovely Ress",
-      "pais": "Uk",
+      "pais": "Reino Unido",
       "ciudad": "Londres",
       "telefono": "+34 684 22 56 30",
       "email": "resslovely@gmail.com",
+      "presencialidad": true,
+      "traslado": true,
+      "linkedin": "https://www.linkedin.com/",
       "tecnologias": [
         "HTML&CSS",
         "REACT"
@@ -159,12 +135,15 @@
       "estado": "descartado"
     },
     {
-      "id": 9,
+      "id": "47137ce0-727e-4a00-8b9b-826c77e23b08",
       "nombre": "Enrique Sánchez Rius",
       "pais": "España",
       "ciudad": "Málaga",
       "telefono": "+34 611 39 33 71",
       "email": "esanchezrius@gmail.com",
+      "presencialidad": false,
+      "traslado": false,
+      "linkedin": "https://www.linkedin.com/",
       "tecnologias": [
         "HTML&CSS",
         "REACT"
@@ -172,12 +151,15 @@
       "estado": "en_proceso"
     },
     {
-      "id": 10,
+      "id": "611de608-aa6c-45ff-9246-43ee88433cae",
       "nombre": "Marcos Ruiz Rius",
       "pais": "España",
       "ciudad": "Madrid",
       "telefono": "+34 689 65 06 0d0",
       "email": "mruiz_90@gmail.com",
+      "presencialidad": true,
+      "traslado": true,
+      "linkedin": "https://www.linkedin.com/",
       "tecnologias": [
         "HTML&CSS",
         "SYPHONY"

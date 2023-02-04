@@ -2,9 +2,9 @@
 
 /* Admin layout*/
 .admin-page {
+    min-height: 100vh;
     display: flex;
     flex-wrap: nowrap;
-    height: 100%;
 }
 
 .admin-sidebar {
@@ -50,6 +50,7 @@
 .admin-main {
     flex-basis: 90%;
     .admin-content{
+        min-height: 92vh;
         display: flex;
     }
 }
@@ -70,6 +71,7 @@
 
 /* Admin Header */
 .admin-header {
+    height: 8vh;
     display: flex;
     width: 100%;
     justify-content: flex-end;

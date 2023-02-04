@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCandidatos, resetDetail } from '../../../../store/slices/candidatos';
+import Spinner from '../../../spinner/Spinner';
 // import Pagination from '../../../pagination/Pagination';
 import SortableDataTable from '../../../sortableDataTable/SortableDataTable';
 import TableNavbar from '../TableNavbar';
@@ -9,6 +10,7 @@ const CandidatosMain = () => {
   const dispatch = useDispatch();
   const candidatosList = useSelector((state) => state.candidatos.list);
   const tagFilterList = useSelector((state) => state.tecnologias.filters);
+  const isLoading = useSelector((state) => state.candidatos.isLoading);
   const [candidatosData, setCandidatosData] = useState(candidatosList);
   // const pages = useSelector((state) => state.candidatos.pagination);
   const [query, setQuery] = useState('');
@@ -18,7 +20,6 @@ const CandidatosMain = () => {
   // Search method
   const search = (rows) => {
     if (tagFilterList.length > 0) {
-      console.log(tagFilterList);
       const filteredRows = rows.filter(
         (row) => row.tecnologias.some(
           (tech) => tagFilterList.includes(tech),
@@ -60,12 +61,12 @@ const CandidatosMain = () => {
 
   return (
     <div className="candidatos-main">
-      {candidatosData
+      {candidatosData && !isLoading
         ? (
           <>
             <TableNavbar
               title="Candidatos"
-              searchPlaceholder="Buscar por Nombre, ciudad o palabra clave..."
+              searchPlaceholder="Buscar por Nombre, ciudad o estado..."
               query={query}
               setQuery={setQuery}
               buttonLabel="Añadir candidato"
@@ -93,9 +94,7 @@ const CandidatosMain = () => {
             {/* <Pagination pages={pages} changePage={changePage} /> */}
           </>
         ) : (
-          <div className="data-error">
-            <h2>No hay candidatos.</h2>
-          </div>
+          <Spinner />
         )}
     </div>
   );

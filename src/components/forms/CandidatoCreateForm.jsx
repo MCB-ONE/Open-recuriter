@@ -145,7 +145,6 @@ const CandidatoCreateForm = () => {
                     ))}
                   </div>
                 )
-
             }
           </div>
         </div>

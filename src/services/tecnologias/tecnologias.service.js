@@ -1,7 +1,9 @@
 import axiosConfig from '../../utils/axios.config';
+import sleep from '../../utils/sleep';
 // import authHeader from '../auth/auth-header';
 
-const getAllTecnologias = () => {
+const getAllTecnologias = async () => {
+  await sleep(2000);
   return axiosConfig.get('tecnologia');
 };
 

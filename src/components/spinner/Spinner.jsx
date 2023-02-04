@@ -1,14 +1,10 @@
+import './spinner.scss';
 import React from 'react';
 
 const Spinner = () => {
   return (
-    <div className="sk-chase">
-      <div className="sk-chase-dot" />
-      <div className="sk-chase-dot" />
-      <div className="sk-chase-dot" />
-      <div className="sk-chase-dot" />
-      <div className="sk-chase-dot" />
-      <div className="sk-chase-dot" />
+    <div className="spinner">
+      <div className="spinner__loader" />
     </div>
   );
 };

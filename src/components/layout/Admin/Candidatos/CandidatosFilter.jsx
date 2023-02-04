@@ -10,6 +10,7 @@ import { getAllTecnologias, resetFilters } from '../../../../store/slices/tecnol
 
 const CandidatosFilter = () => {
   const tecnologiasState = useSelector((state) => state.tecnologias);
+  const isLoading = useSelector((state) => state.tecnologias.isLoading);
   let techOptions = false;
   if (tecnologiasState.list) {
     techOptions = tecnologiasState.list;
@@ -30,11 +31,10 @@ const CandidatosFilter = () => {
         [name]: value,
       });
     } else if (e.target.name && e.target.value === 'Seleccione un país') {
-      console.log(queryFilters);
-      const newQueryList = delete queryFilters.pais;
-      console.log(queryFilters);
+      delete queryFilters.pais;
       setQueryFilters({
-        newQueryList,
+        ...queryFilters,
+        queryFilters,
       });
     }
   };
@@ -57,7 +57,7 @@ const CandidatosFilter = () => {
     <div className="candidatos-filters">
       <div className="filters-form">
         {
-          techOptions ? (
+          techOptions && !isLoading ? (
             <>
               <div className="row justify-content-between">
                 <h5 className="col-auto section-title">Filtros de búsqueda</h5>
@@ -120,9 +120,7 @@ const CandidatosFilter = () => {
               </form>
             </>
           ) : (
-            <div className="spinner-container">
-              <Spinner />
-            </div>
+            <Spinner />
           )
         }
       </div>

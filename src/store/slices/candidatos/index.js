@@ -6,9 +6,8 @@ import CandidatosService from '../../../services/candidatos/candidato.service';
 // CRUD thunk middleware
 export const getAllCandidatos = createAsyncThunk(
   'candidatos/fetchAll',
-  async (queryConfig = { query: '', page: 1 }, thunkAPI) => {
+  async (queryConfig = { query: '' }, thunkAPI) => {
     try {
-      console.log(queryConfig);
       const res = await CandidatosService.getAllCandidatos(queryConfig);
       return { candidatos: res.data };
     } catch (error) {
@@ -28,6 +27,25 @@ export const getCandidatoById = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const res = await CandidatosService.getCandidatosById(id);
+      return { candidato: res.data };
+    } catch (error) {
+      const message = (error.response
+                  && error.response.data
+                  && error.response.data.message)
+                || error.message
+                || error.toString();
+      thunkAPI.dispatch(setMessage(message));
+      return error;
+    }
+  },
+);
+
+export const updateCandidato = createAsyncThunk(
+  'candidatos/update',
+  async (updateData, thunkAPI) => {
+    try {
+      await CandidatosService.updateCandidato(updateData);
+      const res = await CandidatosService.getCandidatosById(updateData.id);
       return { candidato: res.data };
     } catch (error) {
       const message = (error.response
@@ -82,15 +100,15 @@ const candidatoSlice = createSlice({
     },
     // CandidatoByIdReducers
     [getCandidatoById.pending]: (state) => {
-      state.loading = true;
+      state.isLoading = true;
     },
     [getCandidatoById.fulfilled]: (state, action) => {
-      state.loading = false;
-      state.detail = [action.payload.candidato];
+      state.isLoading = false;
+      state.detail = action.payload.candidato;
     },
     [getCandidatoById.rejected]: (state, action) => {
-      state.loading = false;
-      state.error = [action.payload];
+      state.isLoading = false;
+      state.error = action.payload;
     },
     // // Candidato create async reducers
     // [createCandidato.fulfilled]: (state, action) => {
@@ -101,15 +119,18 @@ const candidatoSlice = createSlice({
     //   state.loading = false;
     //   state.error = [action.payload];
     // },
-    // // Candidato update async reducers
-    // [updateCandidato.fulfilled]: (state, action) => {
-    //   state.loading = false;
-    //   state.detail = [action.payload.candidato];
-    // },
-    // [updateCandidato.rejected]: (state, action) => {
-    //   state.loading = false;
-    //   state.error = [action.payload];
-    // },
+    // Candidato update async reducers
+    [updateCandidato.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [updateCandidato.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.detail = action.payload.candidato;
+    },
+    [updateCandidato.rejected]: (state, action) => {
+      state.isLoading = false;
+      state.error = [action.payload];
+    },
     // // Candidato update TAGS async reducers
     // [updateCandidatoTags.fulfilled]: (state, action) => {
     //   state.loading = false;

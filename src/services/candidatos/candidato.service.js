@@ -1,14 +1,14 @@
 import axiosConfig from '../../utils/axios.config';
+import sleep from '../../utils/sleep';
 // import authHeader from '../auth/auth-header';
 
 // Call auth header auxiliar function to generate the request`s headers to include the bearer token
-const getAllCandidatos = ({ query = '', page = 1 }) => {
-  console.log(query);
-
+const getAllCandidatos = async ({ query = '' }) => {
   if (query === '') {
-    return axiosConfig.get(`candidato/?page=${page}`);
+    await sleep(2000);
+    return axiosConfig.get('candidato');
   }
-  return axiosConfig.get(`candidato/?${page}&${query}`);
+  return axiosConfig.get(`candidato/?${query}`);
 };
 
 const getCandidatosById = (id) => {
@@ -20,13 +20,10 @@ const getCandidatosById = (id) => {
 //   return axiosConfig.post('candidato', candidato, { headers: authHeader() });
 // };
 
-// const updateCandidato = ({ field, id }) => {
-//   const name = Object.keys(field)[0];
-//   const value = Object.values(field)[0];
-//   const formData = new FormData();
-//   formData.append(name, value);
-//   return axiosConfig.put(`candidato/${id}`, formData, { headers: authHeader() });
-// };
+const updateCandidato = ({ id, updatedFormData }) => {
+  console.log(id);
+  return axiosConfig.patch(`candidato/${id}`, updatedFormData);
+};
 
 // const updateCandidatoTag = ({ id, tecnologias }) => {
 //   const data = {
@@ -38,8 +35,8 @@ const getCandidatosById = (id) => {
 const candidatosService = {
   getAllCandidatos,
   getCandidatosById,
-//   createCandidato,
-//   updateCandidato,
+  //   createCandidato,
+  updateCandidato,
 //   updateCandidatoTag,
 };
 

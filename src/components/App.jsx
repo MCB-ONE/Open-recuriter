@@ -21,7 +21,7 @@ const App = () => {
         <Route path="/admin/*" element={<AdminPage />}>
           <Route path="" element={<Navigate to="/admin/candidatos" />} />
           <Route path="candidatos/*" element={<CandidatosLayout />} />
-          <Route path="candidatos/id" element={<DetalleCandidatoLayout />} />
+          <Route path="candidatos/:id" element={<DetalleCandidatoLayout />} />
           <Route path="clientes" element={<ClientesLayout />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
